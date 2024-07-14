@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: black;
+        }
+
+        .navbar-nav .nav-item:hover {
+            display: block;
+            color: black;
+        }
+
+        .navbar-nav .nav-item .nav-link:hover {
+            color: red;
+            font-weight: 700;
+        }
+
+        .btn {
+            font-weight: 600;
+        }
+
+        #tani {
+            color: green;
+        }
+
+        #tanu {
+            color: blue;
+        }
+
+        #tani:hover {
+            color: white;
+        }
+
+        #tanu:hover {
+            color: white;
+        }
+
+        .stylish-text {
+            font-family: 'Lobster', cursive;
+            font-size: 30px;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            padding-left: 20px;
+        }
+
+        @media (max-width: 992px) {
+            .stylish-text {
+                font-size: 24px;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.25rem;
+            }
+        }
+
+        .btn-outline-primary {
+            border-color: #0d6efd;
+            color: #0d6efd;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .btn-outline-success {
+            border-color: #198754;
+            color: #198754;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #198754;
+            color: white;
+        }
+
+        .btn-outline-secondary {
+            border-color: #6c757d;
+            color: #6c757d;
+        }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .carousel-item img {
+            max-height: 400px;
+            max-width: 1000px;
+            height: auto;
+            width: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .carousel-caption h5 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .carousel-caption p {
+            font-size: 1.25rem;
+        }
+
+        .popular-category img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .popular-category-item {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .popular-category-item h5 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .popular-category-item a {
+            text-decoration: none;
+        }
+
+        .top10auctions {
+            margin-top: 20px;
+        }
+
+        .auction-item {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .auction-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .auction-text {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .footer h5 {
+            margin-bottom: 20px;
+            color: #f8f9fa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer p, .footer a {
+            color: #f8f9fa;
+            font-size: 0.9rem;
+        }
+
+        .footer a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
+
+        .footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #f8f9fa;
+        }
+
+        .footer .social-icons a:hover {
+            color: #0d6efd;
+        }
+
+        .footer .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .footer .container {
+            max-width: 1100px;
+        }
+        .popular-category{
+            background-color: rgba(128, 128, 128, 0.479);
+        }    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
+        <div class="container-fluid">
+            <a class="stylish-text navbar-brand" href="#">Bid Studio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <form class="d-flex mx-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </form>
+                <div class="navbar-text d-flex">
+                    <a class="btn btn-outline-primary me-2" id="tanu" href="#">Login</a>
+                    <a class="btn btn-outline-success" id="tani" href="#">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"
+                aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav2">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="ART page.html">ART</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="FURNITURE page.html">FURNITURE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">COLLECTIBLES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">ANTIQUES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">COINS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4" href="#">HOME & DECOR'S</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image 3.jpeg" class="d-block w-100" alt="Antique Image 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Art</h5>
+                    <p>Discover the essence of creativity and expression in our exclusive art auction, where each masterpiece tells a unique story and invites you to bring beauty and inspiration into your world.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="image 2.jpeg" class="d-block w-100" alt="Antique Image 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Home & Decor's</h5>
+                    <p>Transform your living space with our curated collection of exquisite home and decor pieces, where timeless elegance meets modern style each item waiting to become the centerpiece of your home.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="ffeba75973764456bfee64e628789289.jpeg" class="d-block w-100" alt="Antique Image 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Antiques</h5>
+                    <p>Step into a world where the past comes alive. Explore our exclusive auction of timeless antiques. Each piece is a treasure, meticulously curated to reflect the elegance and craftsmanship of bygone eras.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="image 4.jpeg" class="d-block w-100" alt="Antique Image 4">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Furniture</h5>
+                    <p>Elevate your home with our exceptional furniture collection, where every piece combines timeless design and superior craftsmanship, turning everyday spaces into extraordinary sanctuaries.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="image 5.jpeg" class="d-block w-100" alt="Antique Image 5">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Coins</h5>
+                    <p>Uncover rare and valuable coins in our exclusive auction, where history and craftsmanship converge, offering collectors a chance to own a piece of numismatic legacy.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="popular-category container">
+        <h2 class="text-center my-4">Explore Popular Category</h2>
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-2 popular-category-item">
+                <img src="image 6.jpeg" alt="Art">
+                <a href="">
+                    <h5 style="color: black;">Art</h5>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 popular-category-item">
+                <img src="image 7.jpeg" alt="Furniture">
+                <a href="">
+                    <h5 style="color: black;">Furniture</h5>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 popular-category-item">
+                <img src="image 10.jpeg" alt="Collectibles">
+                <a href="">
+                    <h5 style="color: black;">Collectibles</h5>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 popular-category-item">
+                <img src="image 8.jpeg" alt="Antiques">
+                <a href="">
+                    <h5 style="color: black;">Antiques</h5>
+                </a>
+            </div>
+            <div class="col-6 col-md-2 popular-category-item">
+                <img src="image 9.jpeg" alt="Coins">
+                <a href="">
+                    <h5 style="color: black;">Coins</h5>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top10auctions container">
+        <h2 class="text-center my-4">Top 10 Ongoing Auctions</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 11.jpeg" alt="Auction 1" class="img-fluid">
+                <p class="auction-text">Auction 1</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 18.jpeg" alt="Auction 2" class="img-fluid">
+                <p class="auction-text">Auction 2</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 14.jpeg" alt="Auction 3" class="img-fluid">
+                <p class="auction-text">Auction 3</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 12.jpeg" alt="Auction 4" class="img-fluid">
+                <p class="auction-text">Auction 4</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 19.jpeg" alt="Auction 5" class="img-fluid">
+                <p class="auction-text">Auction 5</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 16.jpeg" alt="Auction 6" class="img-fluid">
+                <p class="auction-text">Auction 6</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 20.jpeg" alt="Auction 7" class="img-fluid">
+                <p class="auction-text">Auction 7</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 13.jpeg" alt="Auction 8" class="img-fluid">
+                <p class="auction-text">Auction 8</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 17" alt="Auction 9" class="img-fluid">
+                <p class="auction-text">Auction 9</p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2 auction-item">
+                <img src="image 15.jpeg" alt="Auction 10" class="img-fluid">
+                <p class="auction-text">Auction 10</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>Bid Studio offers a unique platform for buying and selling antiques, art, and collectibles. Our mission is to bring timeless elegance and craftsmanship to enthusiasts and collectors around the world.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Auctions</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> 123 Antique St, History City</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 890</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> support@bidstudio.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2024 Bid Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
