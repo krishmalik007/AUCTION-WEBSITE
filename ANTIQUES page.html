@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bid Studio — Antiques</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--accent:#7c5cff;--accent-2:#00c2ff}
+    body{
+      background: radial-gradient(900px 400px at 90% 10%, rgba(0,194,255,0.05), transparent 10%),
+                  linear-gradient(180deg,#fffdfa 0%, #f6fbff 100%);
+      font-family:Inter,system-ui,Arial;
+      color:#081226;
+    }
+    .navbar{background: linear-gradient(90deg, rgba(255,255,255,0.82), rgba(255,255,255,0.6)); box-shadow:0 6px 20px rgba(12,18,30,.04)}
+    .stylish-text{font-family:'Lobster',cursive}
+    .btn-brand{background: linear-gradient(90deg,var(--accent), var(--accent-2)); color:white; border: none}
+    .card{border-radius:12px; transition:transform .18s ease}
+    .card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(12,18,30,.06)}
+    .card-img-top{height:220px; object-fit:cover}
+    .footer{background:#061022;color:#dbeafe;padding:36px 0}
+    @media (max-width:768px){ .card-img-top{height:160px} }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand stylish-text" href="index.html">Bid Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navA">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navA">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="ART page.html">Art</a></li>
+          <li class="nav-item"><a class="nav-link" href="FURNITURE page.html">Furniture</a></li>
+          <li class="nav-item"><a class="nav-link" href="COLLECTIBLES page.html">Collectibles</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ANTIQUES page.html">Antiques</a></li>
+          <li class="nav-item"><a class="nav-link" href="COINS page.html">Coins</a></li>
+          <li class="nav-item"><a class="nav-link" href="HOME & DECOR page.html">Home &amp; Decor's</a></li>
+        </ul>
+        <div id="authArea" class="d-flex gap-2"></div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Antiques</h2>
+      <div class="d-flex gap-2">
+        <input id="antiquesSearch" class="form-control" placeholder="Search antiques..." style="min-width:220px">
+        <select id="antiquesSort" class="form-select" style="width:160px">
+          <option value="">Sort — Featured</option>
+          <option value="low">Price: Low</option>
+          <option value="high">Price: High</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="antiquesGrid" class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="ffeba75973764456bfee64e628789289.jpeg" class="card-img-top" alt="Antique 1">
+          <div class="card-body">
+            <h6 class="card-title">Victorian Mirror — Gilt Frame</h6>
+            <p class="text-muted">$1,800</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image art 6.jpeg" class="card-img-top" alt="Antique 2">
+          <div class="card-body">
+            <h6 class="card-title">19C Dutch Oil Painting — Signed</h6>
+            <p class="text-muted">$280</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 9.jpeg" class="card-img-top" alt="Antique 3">
+          <div class="card-body">
+            <h6 class="card-title">Small Oil Landscape</h6>
+            <p class="text-muted">$130</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 7.jpeg" class="card-img-top" alt="Antique 4">
+          <div class="card-body">
+            <h6 class="card-title">Antique Decorative Stool</h6>
+            <p class="text-muted">$75</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 12.jpeg" class="card-img-top" alt="Antique 5">
+          <div class="card-body">
+            <h6 class="card-title">Porcelain Vase — Handpainted</h6>
+            <p class="text-muted">$220</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 3.jpeg" class="card-img-top" alt="Antique 6">
+          <div class="card-body">
+            <h6 class="card-title">Antique Frame with Print</h6>
+            <p class="text-muted">$200</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 5.jpeg" class="card-img-top" alt="Antique 7">
+          <div class="card-body">
+            <h6 class="card-title">Small Icon — Religious</h6>
+            <p class="text-muted">$95</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 8.jpeg" class="card-img-top" alt="Antique 8">
+          <div class="card-body">
+            <h6 class="card-title">Carved Wood Panel</h6>
+            <p class="text-muted">$360</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container"><div class="row"><div class="col-md-6"><h5>About</h5><p class="small">Antiques collection — curated with provenance info (demo).</p></div><div class="col-md-6 text-end"><p class="small">&copy; 2024 Bid Studio</p></div></div></div>
+  </footer>
+
+  <!-- shared modals and scripts (auth + search) -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content rounded-4">
+      <div class="modal-header border-0"><h5 class="modal-title">Sign in</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><form id="loginForm" onsubmit="event.preventDefault(); loginUser();"><input id="loginEmail" class="form-control mb-3" placeholder="Email" type="email" required><input id="loginPassword" class="form-control mb-3" placeholder="Password" type="password" required><div class="d-grid"><button class="btn btn-brand">Sign in</button></div></form></div>
+    </div></div>
+  </div>
+
+  <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content rounded-4">
+      <div class="modal-header border-0"><h5 class="modal-title">Create account</h5><button class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body"><form id="signupForm" onsubmit="event.preventDefault(); signupUser();"><input id="suName" class="form-control mb-2" placeholder="Full name" required><input id="suEmail" class="form-control mb-2" placeholder="Email" type="email" required><input id="suPassword" class="form-control mb-2" placeholder="Password (min 6)" type="password" minlength="6" required><input id="suPassword2" class="form-control mb-3" placeholder="Confirm password" type="password" minlength="6" required><div class="d-grid"><button class="btn btn-brand">Create account</button></div></form></div>
+    </div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function loadUsers(){ return JSON.parse(localStorage.getItem('bs_users')||'{}'); }
+    function saveUsers(u){ localStorage.setItem('bs_users', JSON.stringify(u)); }
+    function setCurrent(email){ localStorage.setItem('bs_currentUser', email); updateAuthUI(); }
+    function clearCurrent(){ localStorage.removeItem('bs_currentUser'); updateAuthUI(); }
+
+    function signupUser(){
+      const name=document.getElementById('suName').value.trim();
+      const email=document.getElementById('suEmail').value.trim().toLowerCase();
+      const pw=document.getElementById('suPassword').value;
+      const pw2=document.getElementById('suPassword2').value;
+      if(pw!==pw2){ alert('Passwords do not match'); return; }
+      const users=loadUsers();
+      if(users[email]){ alert('Email exists'); return; }
+      users[email]={name,email,password:pw}; saveUsers(users); setCurrent(email);
+      bootstrap.Modal.getInstance(document.getElementById('signupModal')).hide();
+      alert('Welcome '+name.split(' ')[0]);
+      document.getElementById('signupForm').reset();
+    }
+
+    function loginUser(){
+      const email=document.getElementById('loginEmail').value.trim().toLowerCase();
+      const pw=document.getElementById('loginPassword').value;
+      const users=loadUsers();
+      if(!users[email]||users[email].password!==pw){ alert('Invalid email or password'); return; }
+      setCurrent(email); bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
+      alert('Welcome back, '+users[email].name.split(' ')[0]+'!');
+      document.getElementById('loginForm').reset();
+    }
+
+    function logout(){ clearCurrent(); alert('You have logged out.'); }
+
+    function updateAuthUI(){
+      const area=document.getElementById('authArea'); area.innerHTML='';
+      const current=localStorage.getItem('bs_currentUser');
+      if(current){
+        const users=loadUsers(); const user=users[current];
+        const nameBtn=document.createElement('button'); nameBtn.className='btn btn-outline-soft'; nameBtn.textContent=(user&&user.name)?user.name.split(' ')[0]:'Member';
+        const out=document.createElement('button'); out.className='btn btn-outline-secondary'; out.textContent='Logout'; out.onclick=logout;
+        area.appendChild(nameBtn); area.appendChild(out);
+      } else {
+        const l=document.createElement('button'); l.className='btn btn-outline-soft'; l.textContent='Login'; l.onclick=()=> new bootstrap.Modal(document.getElementById('loginModal')).show();
+        const s=document.createElement('button'); s.className='btn btn-brand'; s.textContent='Sign Up'; s.onclick=()=> new bootstrap.Modal(document.getElementById('signupModal')).show();
+        area.appendChild(l); area.appendChild(s);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', ()=>{
+      updateAuthUI();
+      document.getElementById('antiquesSearch').addEventListener('input', function(){
+        const q=this.value.toLowerCase();
+        document.querySelectorAll('#antiquesGrid .card').forEach(card=> card.parentElement.style.display = (!q || card.innerText.toLowerCase().includes(q)) ? '' : 'none');
+      });
+    });
+  </script>
+</body>
+</html>

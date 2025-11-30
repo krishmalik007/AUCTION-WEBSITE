@@ -7,67 +7,60 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    /* --- Theme & layout --- */
     :root{
       --accent:#7c5cff;
       --accent-2:#00c2ff;
-      --glass: rgba(255,255,255,0.6);
-      --muted:#6b7280;
-      --bg-1: linear-gradient(120deg,#f8fbff 0%, #f3f6ff 30%, #eef8ff 100%);
       --card-shadow: 0 10px 30px rgba(16,24,40,.08);
     }
     html,body{height:100%}
     body{
       margin:0;
-      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 10%),
-                  radial-gradient(900px 400px at 90% 90%, rgba(0,194,255,0.08), transparent 10%),
-                  var(--bg-1);
-      color:#0b1220;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.10), transparent 10%),
+        radial-gradient(900px 400px at 90% 90%, rgba(0,194,255,0.06), transparent 10%),
+        linear-gradient(180deg,#fbfdff 0%, #f6f8ff 100%);
+      color:#081226;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
 
-    /* --- Navbar --- */
+    /* NAVBAR */
     .navbar{
-      background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
-      backdrop-filter: blur(6px);
-      box-shadow: 0 6px 20px rgba(12,18,30,.06);
+      background: linear-gradient(90deg, rgba(255,255,255,0.78), rgba(255,255,255,0.56));
+      box-shadow: 0 6px 20px rgba(12,18,30,.04);
       border-bottom: 1px solid rgba(15,23,42,.04);
     }
-    .stylish-text{font-family:'Lobster', cursive; font-size:1.5rem;color:#111}
-    .nav-link{color:#0b1220!important;font-weight:600}
+    .stylish-text{font-family:'Lobster',cursive;font-size:1.5rem}
+    .nav-link{color:#081226!important;font-weight:600}
+    .nav-link:hover{color:var(--accent)!important}
     .btn-brand{background: linear-gradient(90deg,var(--accent), var(--accent-2)); color:white; border: none}
-    .btn-outline-soft{border:1px solid rgba(11,18,32,.06); background: rgba(255,255,255,.8)}
+    .btn-outline-soft{border:1px solid rgba(11,18,32,.06); background: rgba(255,255,255,.85)}
 
-    /* --- Hero carousel --- */
+    /* HERO / CAROUSEL */
     .carousel-item img{height:420px; object-fit:cover; border-radius:12px; box-shadow:var(--card-shadow)}
     .carousel-caption{right:unset; left:24px; text-align:left}
     .carousel-caption h5{font-weight:700; color:#fff}
-    .carousel-caption p{color: #eef6ff}
+    .carousel-caption p{color:#eef6ff}
 
-    /* --- Search --- */
+    /* SEARCH */
     .search-inline .form-control{border-radius:999px 12px 12px 999px; box-shadow:0 8px 24px rgba(15,23,42,0.06)}
     .search-inline .btn{border-radius:12px}
 
-    /* --- Popular categories --- */
-    .popular-category{padding:36px 0; margin-top:28px}
-    .popular-item{background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5)); border-radius:14px; padding:18px; transition:transform .22s ease, box-shadow .22s ease; box-shadow:var(--card-shadow)}
-    .popular-item:hover{transform:translateY(-8px); box-shadow: 0 24px 48px rgba(12,18,30,.08)}
+    /* CATEGORIES & CARDS */
+    .popular-item{background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.56)); border-radius:14px; padding:16px; transition:transform .22s, box-shadow .22s; box-shadow:var(--card-shadow)}
+    .popular-item:hover{transform:translateY(-8px); box-shadow:0 24px 48px rgba(12,18,30,.08)}
     .popular-item img{width:120px; height:120px; object-fit:cover; border-radius:10px}
 
-    /* --- Auction cards --- */
     .card{border:0; border-radius:14px; overflow:hidden; transition:transform .18s ease, box-shadow .18s ease}
-    .card:hover{transform:translateY(-6px); box-shadow: 0 20px 40px rgba(12,18,30,.08)}
+    .card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(12,18,30,.08)}
     .card .card-img-top{height:180px; object-fit:cover}
     .auction-text{font-weight:700; color:#0b1220}
     .meta-pill{font-size:.8rem; padding:.35rem .6rem; border-radius:999px; background: rgba(11,18,32,.06)}
 
-    /* --- Footer --- */
-    .footer{background:linear-gradient(180deg,#061022,#07142a); color: #e6f0ff; padding:48px 0; margin-top:48px; border-top-left-radius:18px; border-top-right-radius:18px}
-    .footer a{color: #cfe6ff}
+    /* FOOTER */
+    .footer{background:linear-gradient(180deg,#061022,#07142a); color:#dbeafe; padding:48px 0; margin-top:48px; border-top-left-radius:18px; border-top-right-radius:18px}
+    .footer a{color:#cfe6ff}
 
-    /* --- small screens --- */
     @media (max-width:768px){
       .carousel-item img{height:230px}
       .search-inline{flex-direction:column}
@@ -76,7 +69,7 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVBAR with routes to all pages -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand stylish-text" href="index.html">Bid Studio</a>
@@ -88,16 +81,14 @@
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="ART page.html">ART</a></li>
           <li class="nav-item"><a class="nav-link" href="FURNITURE page.html">FURNITURE</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">COLLECTIBLES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">ANTIQUES</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">COINS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">HOME &amp; DECOR'S</a></li>
+          <li class="nav-item"><a class="nav-link" href="COLLECTIBLES page.html">COLLECTIBLES</a></li>
+          <li class="nav-item"><a class="nav-link" href="ANTIQUES page.html">ANTIQUES</a></li>
+          <li class="nav-item"><a class="nav-link" href="COINS page.html">COINS</a></li>
+          <li class="nav-item"><a class="nav-link" href="HOME & DECOR page.html">HOME &amp; DECOR'S</a></li>
         </ul>
 
         <div id="authArea" class="d-flex align-items-center gap-2">
-          <!-- buttons replaced by JS when logged in -->
-          <button id="btnLoginShow" class="btn btn-outline-soft">Login</button>
-          <button id="btnSignupShow" class="btn btn-brand">Sign Up</button>
+          <!-- JS will populate login/signup or user+logout -->
         </div>
       </div>
     </div>
@@ -105,7 +96,7 @@
 
   <!-- HERO / CAROUSEL -->
   <div class="container mt-4">
-    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="homeCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
         <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
@@ -115,25 +106,23 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="image 3.jpeg" class="d-block w-100 rounded" alt="Art">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5>Discover Art</h5>
-            <p>Timeless artworks and contemporary pieces — curated with care.</p>
+            <p class="mb-0">Timeless artworks and contemporary pieces — curated with care.</p>
           </div>
         </div>
-
         <div class="carousel-item">
           <img src="image 2.jpeg" class="d-block w-100 rounded" alt="Home & Decor">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5>Home & Decor</h5>
-            <p>Find elements that transform your living space.</p>
+            <p class="mb-0">Find elements that transform your living space.</p>
           </div>
         </div>
-
         <div class="carousel-item">
           <img src="ffeba75973764456bfee64e628789289.jpeg" class="d-block w-100 rounded" alt="Antiques">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
             <h5>Antiques</h5>
-            <p>Historical pieces with stories to tell.</p>
+            <p class="mb-0">Historical pieces with stories to tell.</p>
           </div>
         </div>
       </div>
@@ -159,48 +148,32 @@
     </div>
   </div>
 
-  <!-- Popular categories -->
-  <section class="popular-category container">
+  <!-- CATEGORIES -->
+  <section class="popular-category container mt-4">
     <h2 class="text-center my-4">Explore Popular Categories</h2>
     <div class="row justify-content-center g-3">
-      <div class="col-6 col-md-2">
-        <div class="popular-item text-center p-3">
-          <a href="ART page.html"><img src="image 6.jpeg" alt="Art"></a>
-          <h6 class="mt-2">Art</h6>
-        </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="ART page.html"><div class="popular-item"><img src="image 6.jpeg" alt="Art"><h6 class="mt-2">Art</h6></div></a>
       </div>
-
-      <div class="col-6 col-md-2">
-        <div class="popular-item text-center p-3">
-          <a href="FURNITURE page.html"><img src="image 7.jpeg" alt="Furniture"></a>
-          <h6 class="mt-2">Furniture</h6>
-        </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="FURNITURE page.html"><div class="popular-item"><img src="image 7.jpeg" alt="Furniture"><h6 class="mt-2">Furniture</h6></div></a>
       </div>
-
-      <div class="col-6 col-md-2">
-        <div class="popular-item text-center p-3">
-          <img src="image 10.jpeg" alt="Collectibles">
-          <h6 class="mt-2">Collectibles</h6>
-        </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="COLLECTIBLES page.html"><div class="popular-item"><img src="image 10.jpeg" alt="Collectibles"><h6 class="mt-2">Collectibles</h6></div></a>
       </div>
-
-      <div class="col-6 col-md-2">
-        <div class="popular-item text-center p-3">
-          <img src="image 8.jpeg" alt="Antiques">
-          <h6 class="mt-2">Antiques</h6>
-        </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="ANTIQUES page.html"><div class="popular-item"><img src="image 8.jpeg" alt="Antiques"><h6 class="mt-2">Antiques</h6></div></a>
       </div>
-
-      <div class="col-6 col-md-2">
-        <div class="popular-item text-center p-3">
-          <img src="image 9.jpeg" alt="Coins">
-          <h6 class="mt-2">Coins</h6>
-        </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="COINS page.html"><div class="popular-item"><img src="image 9.jpeg" alt="Coins"><h6 class="mt-2">Coins</h6></div></a>
+      </div>
+      <div class="col-6 col-md-2 text-center">
+        <a href="HOME & DECOR page.html"><div class="popular-item"><img src="image 4.jpeg" alt="Home & Decor"><h6 class="mt-2">Home & Decor</h6></div></a>
       </div>
     </div>
   </section>
 
-  <!-- Top auctions -->
+  <!-- TOP AUCTIONS GRID -->
   <section class="container mt-5">
     <h2 class="text-center mb-4">Top Ongoing Auctions</h2>
     <div id="auctionsGrid" class="row g-4">
@@ -263,12 +236,11 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer mt-5">
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-3">
@@ -278,9 +250,13 @@
         <div class="col-md-4 mb-3">
           <h5>Quick Links</h5>
           <ul class="list-unstyled small">
-            <li><a href="#">Auctions</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="ART page.html">Art</a></li>
+            <li><a href="FURNITURE page.html">Furniture</a></li>
+            <li><a href="COLLECTIBLES page.html">Collectibles</a></li>
+            <li><a href="ANTIQUES page.html">Antiques</a></li>
+            <li><a href="COINS page.html">Coins</a></li>
+            <li><a href="HOME & DECOR page.html">Home & Decor</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-3">
@@ -293,24 +269,18 @@
     </div>
   </footer>
 
-  <!-- LOGIN & SIGNUP MODALS -->
+  <!-- LOGIN & SIGNUP MODALS (demo, localStorage) -->
   <div class="modal fade" id="loginModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4">
         <div class="modal-header border-0">
-          <h5 class="modal-title">Welcome back</h5>
+          <h5 class="modal-title">Sign in</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
-            <div class="mb-3">
-              <label class="form-label">Email</label>
-              <input id="loginEmail" type="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input id="loginPassword" type="password" class="form-control" required>
-            </div>
+            <input id="loginEmail" class="form-control mb-3" placeholder="Email" type="email" required>
+            <input id="loginPassword" class="form-control mb-3" placeholder="Password" type="password" required>
             <div class="d-grid">
               <button class="btn btn-brand">Sign in</button>
             </div>
@@ -324,51 +294,32 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4">
         <div class="modal-header border-0">
-          <h5 class="modal-title">Create an account</h5>
+          <h5 class="modal-title">Create account</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
           <form id="signupForm" onsubmit="event.preventDefault(); signupUser();">
-            <div class="mb-2">
-              <label class="form-label">Full name</label>
-              <input id="suName" type="text" class="form-control" placeholder="Your name" required>
-            </div>
-            <div class="mb-2">
-              <label class="form-label">Email</label>
-              <input id="suEmail" type="email" class="form-control" placeholder="name@example.com" required>
-            </div>
-            <div class="mb-2">
-              <label class="form-label">Password</label>
-              <input id="suPassword" type="password" class="form-control" minlength="6" required>
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Confirm password</label>
-              <input id="suPassword2" type="password" class="form-control" minlength="6" required>
-            </div>
-            <div class="d-grid">
-              <button class="btn btn-brand">Create account</button>
-            </div>
+            <input id="suName" class="form-control mb-2" placeholder="Full name" required>
+            <input id="suEmail" class="form-control mb-2" placeholder="name@example.com" type="email" required>
+            <input id="suPassword" class="form-control mb-2" placeholder="Password (min 6)" type="password" minlength="6" required>
+            <input id="suPassword2" class="form-control mb-3" placeholder="Confirm password" type="password" minlength="6" required>
+            <div class="d-grid"><button class="btn btn-brand">Create account</button></div>
+            <small class="text-muted d-block mt-2">By signing up you accept our demo terms.</small>
           </form>
-          <small class="text-muted d-block mt-2">By signing up you accept our terms — demo only.</small>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- SCRIPTS: demo auth + search -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // --- Simple client-side auth using localStorage (DEMO only) ---
-    // Data shape: localStorage.bs_users = JSON.stringify({ email: {name,email,password} })
-    // active user stored as 'bs_currentUser' (email)
-
-    // Helpers
+    // Demo client-side auth stored in localStorage
     function loadUsers(){ return JSON.parse(localStorage.getItem('bs_users') || '{}'); }
     function saveUsers(u){ localStorage.setItem('bs_users', JSON.stringify(u)); }
     function setCurrent(email){ localStorage.setItem('bs_currentUser', email); updateAuthUI(); }
     function clearCurrent(){ localStorage.removeItem('bs_currentUser'); updateAuthUI(); }
 
-    // Signup
     function signupUser(){
       const name = document.getElementById('suName').value.trim();
       const email = document.getElementById('suEmail').value.trim().toLowerCase();
@@ -382,11 +333,9 @@
       setCurrent(email);
       bootstrap.Modal.getInstance(document.getElementById('signupModal')).hide();
       alert('Account created — welcome, ' + name.split(' ')[0] + '!');
-      // reset form
       document.getElementById('signupForm').reset();
     }
 
-    // Login
     function loginUser(){
       const email = document.getElementById('loginEmail').value.trim().toLowerCase();
       const pw = document.getElementById('loginPassword').value;
@@ -398,24 +347,19 @@
       document.getElementById('loginForm').reset();
     }
 
-    // Logout
-    function logout(){
-      clearCurrent();
-      alert('You have logged out.');
-    }
+    function logout(){ clearCurrent(); alert('You have logged out.'); }
 
-    // Update top-right auth UI
     function updateAuthUI(){
       const area = document.getElementById('authArea');
+      area.innerHTML = '';
       const currentEmail = localStorage.getItem('bs_currentUser');
-      area.innerHTML = ''; // reset
       if(currentEmail){
         const users = loadUsers();
         const user = users[currentEmail];
         const nameBtn = document.createElement('button');
         nameBtn.className = 'btn btn-outline-soft';
         nameBtn.textContent = (user && user.name) ? user.name.split(' ')[0] : 'Member';
-        nameBtn.onclick = ()=>{ /* could open profile */ };
+        nameBtn.onclick = ()=>{};
         const logoutBtn = document.createElement('button');
         logoutBtn.className = 'btn btn-outline-secondary';
         logoutBtn.textContent = 'Logout';
@@ -425,13 +369,11 @@
       } else {
         const loginShow = document.createElement('button');
         loginShow.className = 'btn btn-outline-soft';
-        loginShow.id = 'btnLoginShow';
         loginShow.textContent = 'Login';
         loginShow.onclick = ()=> new bootstrap.Modal(document.getElementById('loginModal')).show();
 
         const signupShow = document.createElement('button');
         signupShow.className = 'btn btn-brand';
-        signupShow.id = 'btnSignupShow';
         signupShow.textContent = 'Sign Up';
         signupShow.onclick = ()=> new bootstrap.Modal(document.getElementById('signupModal')).show();
 
@@ -440,7 +382,7 @@
       }
     }
 
-    // Search filter for auction cards
+    // Simple client-side search (filters auction cards by inner text)
     function filterCards(){
       const q = document.getElementById('globalSearch').value.trim().toLowerCase();
       document.querySelectorAll('#auctionsGrid .card').forEach(card=>{
@@ -449,17 +391,10 @@
       });
     }
 
-    // Wire up initial buttons and UI
-    document.addEventListener('DOMContentLoaded', ()=>{
-      // show modals when top buttons clicked (if not replaced by logged-in UI)
-      document.getElementById('authArea').addEventListener('click', (e)=>{
-        if(e.target && e.target.id === 'btnLoginShow'){
-          new bootstrap.Modal(document.getElementById('loginModal')).show();
-        } else if(e.target && e.target.id === 'btnSignupShow'){
-          new bootstrap.Modal(document.getElementById('signupModal')).show();
-        }
-      });
+    document.addEventListener('DOMContentLoaded', ()=> {
       updateAuthUI();
+      // keyboard Enter on search triggers filter
+      document.getElementById('globalSearch').addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ e.preventDefault(); filterCards(); } });
     });
   </script>
 </body>
