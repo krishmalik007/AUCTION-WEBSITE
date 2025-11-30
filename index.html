@@ -1,456 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-    <style>
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bid Studio — Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* --- Theme & layout --- */
+    :root{
+      --accent:#7c5cff;
+      --accent-2:#00c2ff;
+      --glass: rgba(255,255,255,0.6);
+      --muted:#6b7280;
+      --bg-1: linear-gradient(120deg,#f8fbff 0%, #f3f6ff 30%, #eef8ff 100%);
+      --card-shadow: 0 10px 30px rgba(16,24,40,.08);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.12), transparent 10%),
+                  radial-gradient(900px 400px at 90% 90%, rgba(0,194,255,0.08), transparent 10%),
+                  var(--bg-1);
+      color:#0b1220;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
 
-        .nav-link {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: black;
-        }
+    /* --- Navbar --- */
+    .navbar{
+      background: linear-gradient(90deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(12,18,30,.06);
+      border-bottom: 1px solid rgba(15,23,42,.04);
+    }
+    .stylish-text{font-family:'Lobster', cursive; font-size:1.5rem;color:#111}
+    .nav-link{color:#0b1220!important;font-weight:600}
+    .btn-brand{background: linear-gradient(90deg,var(--accent), var(--accent-2)); color:white; border: none}
+    .btn-outline-soft{border:1px solid rgba(11,18,32,.06); background: rgba(255,255,255,.8)}
 
-        .navbar-nav .nav-item:hover {
-            display: block;
-            color: black;
-        }
+    /* --- Hero carousel --- */
+    .carousel-item img{height:420px; object-fit:cover; border-radius:12px; box-shadow:var(--card-shadow)}
+    .carousel-caption{right:unset; left:24px; text-align:left}
+    .carousel-caption h5{font-weight:700; color:#fff}
+    .carousel-caption p{color: #eef6ff}
 
-        .navbar-nav .nav-item .nav-link:hover {
-            color: red;
-            font-weight: 700;
-        }
+    /* --- Search --- */
+    .search-inline .form-control{border-radius:999px 12px 12px 999px; box-shadow:0 8px 24px rgba(15,23,42,0.06)}
+    .search-inline .btn{border-radius:12px}
 
-        .btn {
-            font-weight: 600;
-        }
+    /* --- Popular categories --- */
+    .popular-category{padding:36px 0; margin-top:28px}
+    .popular-item{background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.5)); border-radius:14px; padding:18px; transition:transform .22s ease, box-shadow .22s ease; box-shadow:var(--card-shadow)}
+    .popular-item:hover{transform:translateY(-8px); box-shadow: 0 24px 48px rgba(12,18,30,.08)}
+    .popular-item img{width:120px; height:120px; object-fit:cover; border-radius:10px}
 
-        #tani {
-            color: green;
-        }
+    /* --- Auction cards --- */
+    .card{border:0; border-radius:14px; overflow:hidden; transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-6px); box-shadow: 0 20px 40px rgba(12,18,30,.08)}
+    .card .card-img-top{height:180px; object-fit:cover}
+    .auction-text{font-weight:700; color:#0b1220}
+    .meta-pill{font-size:.8rem; padding:.35rem .6rem; border-radius:999px; background: rgba(11,18,32,.06)}
 
-        #tanu {
-            color: blue;
-        }
+    /* --- Footer --- */
+    .footer{background:linear-gradient(180deg,#061022,#07142a); color: #e6f0ff; padding:48px 0; margin-top:48px; border-top-left-radius:18px; border-top-right-radius:18px}
+    .footer a{color: #cfe6ff}
 
-        #tani:hover {
-            color: white;
-        }
-
-        #tanu:hover {
-            color: white;
-        }
-
-        .stylish-text {
-            font-family: 'Lobster', cursive;
-            font-size: 30px;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            padding-left: 20px;
-        }
-
-        @media (max-width: 992px) {
-            .stylish-text {
-                font-size: 24px;
-            }
-
-            .nav-link {
-                font-size: 1rem;
-            }
-
-            .navbar-brand {
-                font-size: 1.25rem;
-            }
-        }
-
-        .btn-outline-primary {
-            border-color: #0d6efd;
-            color: #0d6efd;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        .btn-outline-success {
-            border-color: #198754;
-            color: #198754;
-        }
-
-        .btn-outline-success:hover {
-            background-color: #198754;
-            color: white;
-        }
-
-        .btn-outline-secondary {
-            border-color: #6c757d;
-            color: #6c757d;
-        }
-
-        .btn-outline-secondary:hover {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .carousel-item img {
-            max-height: 400px;
-            max-width: 1000px;
-            height: auto;
-            width: auto;
-            object-fit: contain;
-            margin: 0 auto;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .carousel-caption h5 {
-            font-size: 2rem;
-            font-weight: bold;
-        }
-
-        .carousel-caption p {
-            font-size: 1.25rem;
-        }
-
-        .popular-category img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .popular-category-item {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .popular-category-item h5 {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: black;
-        }
-
-        .popular-category-item a {
-            text-decoration: none;
-        }
-
-        .top10auctions {
-            margin-top: 20px;
-        }
-
-        .auction-item {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .auction-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        .auction-text {
-            margin-top: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: black;
-        }
-
-        .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 40px 0;
-        }
-
-        .footer h5 {
-            margin-bottom: 20px;
-            color: #f8f9fa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer p, .footer a {
-            color: #f8f9fa;
-            font-size: 0.9rem;
-        }
-
-        .footer a:hover {
-            color: #f8f9fa;
-            text-decoration: underline;
-        }
-
-        .footer .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: #f8f9fa;
-        }
-
-        .footer .social-icons a:hover {
-            color: #0d6efd;
-        }
-
-        .footer .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .footer .container {
-            max-width: 1100px;
-        }
-        .popular-category{
-            background-color: rgba(128, 128, 128, 0.479);
-        }    </style>
+    /* --- small screens --- */
+    @media (max-width:768px){
+      .carousel-item img{height:230px}
+      .search-inline{flex-direction:column}
+      .search-inline .btn{width:100%; margin-top:8px}
+    }
+  </style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
-        <div class="container-fluid">
-            <a class="stylish-text navbar-brand" href="#">Bid Studio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="d-flex mx-auto">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
-                </form>
-                <div class="navbar-text d-flex">
-                    <a class="btn btn-outline-primary me-2" id="tanu" href="#">Login</a>
-                    <a class="btn btn-outline-success" id="tani" href="#">Sign Up</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand stylish-text" href="index.html">Bid Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"
-                aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav2">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="ART page.html">ART</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="FURNITURE page.html">FURNITURE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">COLLECTIBLES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">ANTIQUES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">COINS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">HOME & DECOR'S</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="ART page.html">ART</a></li>
+          <li class="nav-item"><a class="nav-link" href="FURNITURE page.html">FURNITURE</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">COLLECTIBLES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">ANTIQUES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">COINS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">HOME &amp; DECOR'S</a></li>
+        </ul>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                aria-label="Slide 5"></button>
+        <div id="authArea" class="d-flex align-items-center gap-2">
+          <!-- buttons replaced by JS when logged in -->
+          <button id="btnLoginShow" class="btn btn-outline-soft">Login</button>
+          <button id="btnSignupShow" class="btn btn-brand">Sign Up</button>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="image 3.jpeg" class="d-block w-100" alt="Antique Image 3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Art</h5>
-                    <p>Discover the essence of creativity and expression in our exclusive art auction, where each masterpiece tells a unique story and invites you to bring beauty and inspiration into your world.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="image 2.jpeg" class="d-block w-100" alt="Antique Image 2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Home & Decor's</h5>
-                    <p>Transform your living space with our curated collection of exquisite home and decor pieces, where timeless elegance meets modern style each item waiting to become the centerpiece of your home.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="ffeba75973764456bfee64e628789289.jpeg" class="d-block w-100" alt="Antique Image 1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Antiques</h5>
-                    <p>Step into a world where the past comes alive. Explore our exclusive auction of timeless antiques. Each piece is a treasure, meticulously curated to reflect the elegance and craftsmanship of bygone eras.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="image 4.jpeg" class="d-block w-100" alt="Antique Image 4">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Furniture</h5>
-                    <p>Elevate your home with our exceptional furniture collection, where every piece combines timeless design and superior craftsmanship, turning everyday spaces into extraordinary sanctuaries.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="image 5.jpeg" class="d-block w-100" alt="Antique Image 5">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Coins</h5>
-                    <p>Uncover rare and valuable coins in our exclusive auction, where history and craftsmanship converge, offering collectors a chance to own a piece of numismatic legacy.</p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+      </div>
     </div>
+  </nav>
 
-    <div class="popular-category container">
-        <h2 class="text-center my-4">Explore Popular Category</h2>
-        <div class="row justify-content-center">
-            <div class="col-6 col-md-2 popular-category-item">
-                <img src="image 6.jpeg" alt="Art">
-                <a href="">
-                    <h5 style="color: black;">Art</h5>
-                </a>
-            </div>
-            <div class="col-6 col-md-2 popular-category-item">
-                <img src="image 7.jpeg" alt="Furniture">
-                <a href="">
-                    <h5 style="color: black;">Furniture</h5>
-                </a>
-            </div>
-            <div class="col-6 col-md-2 popular-category-item">
-                <img src="image 10.jpeg" alt="Collectibles">
-                <a href="">
-                    <h5 style="color: black;">Collectibles</h5>
-                </a>
-            </div>
-            <div class="col-6 col-md-2 popular-category-item">
-                <img src="image 8.jpeg" alt="Antiques">
-                <a href="">
-                    <h5 style="color: black;">Antiques</h5>
-                </a>
-            </div>
-            <div class="col-6 col-md-2 popular-category-item">
-                <img src="image 9.jpeg" alt="Coins">
-                <a href="">
-                    <h5 style="color: black;">Coins</h5>
-                </a>
-            </div>
+  <!-- HERO / CAROUSEL -->
+  <div class="container mt-4">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="image 3.jpeg" class="d-block w-100 rounded" alt="Art">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Discover Art</h5>
+            <p>Timeless artworks and contemporary pieces — curated with care.</p>
+          </div>
         </div>
+
+        <div class="carousel-item">
+          <img src="image 2.jpeg" class="d-block w-100 rounded" alt="Home & Decor">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Home & Decor</h5>
+            <p>Find elements that transform your living space.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="ffeba75973764456bfee64e628789289.jpeg" class="d-block w-100 rounded" alt="Antiques">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Antiques</h5>
+            <p>Historical pieces with stories to tell.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+  </div>
 
-    <div class="top10auctions container">
-        <h2 class="text-center my-4">Top 10 Ongoing Auctions</h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 11.jpeg" alt="Auction 1" class="img-fluid">
-                <p class="auction-text">Auction 1</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 18.jpeg" alt="Auction 2" class="img-fluid">
-                <p class="auction-text">Auction 2</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 14.jpeg" alt="Auction 3" class="img-fluid">
-                <p class="auction-text">Auction 3</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 12.jpeg" alt="Auction 4" class="img-fluid">
-                <p class="auction-text">Auction 4</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 19.jpeg" alt="Auction 5" class="img-fluid">
-                <p class="auction-text">Auction 5</p>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 16.jpeg" alt="Auction 6" class="img-fluid">
-                <p class="auction-text">Auction 6</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 20.jpeg" alt="Auction 7" class="img-fluid">
-                <p class="auction-text">Auction 7</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 13.jpeg" alt="Auction 8" class="img-fluid">
-                <p class="auction-text">Auction 8</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 17" alt="Auction 9" class="img-fluid">
-                <p class="auction-text">Auction 9</p>
-            </div>
-            <div class="col-12 col-md-4 col-lg-2 auction-item">
-                <img src="image 15.jpeg" alt="Auction 10" class="img-fluid">
-                <p class="auction-text">Auction 10</p>
-            </div>
-        </div>
+  <!-- SEARCH -->
+  <div class="container mt-4">
+    <div class="d-flex justify-content-center">
+      <form class="d-flex search-inline w-100" onsubmit="event.preventDefault(); filterCards();">
+        <input id="globalSearch" class="form-control me-2" type="search" placeholder="Search auctions, categories or items...">
+        <button id="searchBtn" class="btn btn-outline-secondary" type="button" onclick="filterCards()">Search</button>
+      </form>
     </div>
+  </div>
 
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>About Us</h5>
-                    <p>Bid Studio offers a unique platform for buying and selling antiques, art, and collectibles. Our mission is to bring timeless elegance and craftsmanship to enthusiasts and collectors around the world.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Auctions</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> 123 Antique St, History City</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 890</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> support@bidstudio.com</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2024 Bid Studio. All Rights Reserved.</p>
-            </div>
+  <!-- Popular categories -->
+  <section class="popular-category container">
+    <h2 class="text-center my-4">Explore Popular Categories</h2>
+    <div class="row justify-content-center g-3">
+      <div class="col-6 col-md-2">
+        <div class="popular-item text-center p-3">
+          <a href="ART page.html"><img src="image 6.jpeg" alt="Art"></a>
+          <h6 class="mt-2">Art</h6>
         </div>
-    </footer>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col-6 col-md-2">
+        <div class="popular-item text-center p-3">
+          <a href="FURNITURE page.html"><img src="image 7.jpeg" alt="Furniture"></a>
+          <h6 class="mt-2">Furniture</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="popular-item text-center p-3">
+          <img src="image 10.jpeg" alt="Collectibles">
+          <h6 class="mt-2">Collectibles</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="popular-item text-center p-3">
+          <img src="image 8.jpeg" alt="Antiques">
+          <h6 class="mt-2">Antiques</h6>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="popular-item text-center p-3">
+          <img src="image 9.jpeg" alt="Coins">
+          <h6 class="mt-2">Coins</h6>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top auctions -->
+  <section class="container mt-5">
+    <h2 class="text-center mb-4">Top Ongoing Auctions</h2>
+    <div id="auctionsGrid" class="row g-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 11.jpeg" class="card-img-top" alt="Auction 1">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 1</p>
+            <p class="meta-pill mt-2">Ends in 2d 4h</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 18.jpeg" class="card-img-top" alt="Auction 2">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 2</p>
+            <p class="meta-pill mt-2">Highest bid $420</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 14.jpeg" class="card-img-top" alt="Auction 3">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 3</p>
+            <p class="meta-pill mt-2">Reserve met</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 12.jpeg" class="card-img-top" alt="Auction 4">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 4</p>
+            <p class="meta-pill mt-2">New bid +$50</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 19.jpeg" class="card-img-top" alt="Auction 5">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 5</p>
+            <p class="meta-pill mt-2">Popular</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="card shadow-sm">
+          <img src="image 16.jpeg" class="card-img-top" alt="Auction 6">
+          <div class="card-body text-center">
+            <p class="auction-text">Auction 6</p>
+            <p class="meta-pill mt-2">Ends soon</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>About</h5>
+          <p class="small">Bid Studio — curated auctions for art, antiques & collectibles.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled small">
+            <li><a href="#">Auctions</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5>Contact</h5>
+          <p class="small mb-1"><i class="fa fa-map-marker"></i> 123 Antique St, History City</p>
+          <p class="small mb-1"><i class="fa fa-envelope"></i> support@bidstudio.com</p>
+        </div>
+      </div>
+      <div class="text-center mt-4 small">&copy; 2024 Bid Studio. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!-- LOGIN & SIGNUP MODALS -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Welcome back</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input id="loginEmail" type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input id="loginPassword" type="password" class="form-control" required>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-brand">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Create an account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm" onsubmit="event.preventDefault(); signupUser();">
+            <div class="mb-2">
+              <label class="form-label">Full name</label>
+              <input id="suName" type="text" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Email</label>
+              <input id="suEmail" type="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Password</label>
+              <input id="suPassword" type="password" class="form-control" minlength="6" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm password</label>
+              <input id="suPassword2" type="password" class="form-control" minlength="6" required>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-brand">Create account</button>
+            </div>
+          </form>
+          <small class="text-muted d-block mt-2">By signing up you accept our terms — demo only.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // --- Simple client-side auth using localStorage (DEMO only) ---
+    // Data shape: localStorage.bs_users = JSON.stringify({ email: {name,email,password} })
+    // active user stored as 'bs_currentUser' (email)
+
+    // Helpers
+    function loadUsers(){ return JSON.parse(localStorage.getItem('bs_users') || '{}'); }
+    function saveUsers(u){ localStorage.setItem('bs_users', JSON.stringify(u)); }
+    function setCurrent(email){ localStorage.setItem('bs_currentUser', email); updateAuthUI(); }
+    function clearCurrent(){ localStorage.removeItem('bs_currentUser'); updateAuthUI(); }
+
+    // Signup
+    function signupUser(){
+      const name = document.getElementById('suName').value.trim();
+      const email = document.getElementById('suEmail').value.trim().toLowerCase();
+      const pw = document.getElementById('suPassword').value;
+      const pw2 = document.getElementById('suPassword2').value;
+      if(pw !== pw2){ alert('Passwords do not match'); return; }
+      const users = loadUsers();
+      if(users[email]){ alert('An account with that email already exists.'); return; }
+      users[email] = { name, email, password: pw };
+      saveUsers(users);
+      setCurrent(email);
+      bootstrap.Modal.getInstance(document.getElementById('signupModal')).hide();
+      alert('Account created — welcome, ' + name.split(' ')[0] + '!');
+      // reset form
+      document.getElementById('signupForm').reset();
+    }
+
+    // Login
+    function loginUser(){
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const pw = document.getElementById('loginPassword').value;
+      const users = loadUsers();
+      if(!users[email] || users[email].password !== pw){ alert('Invalid email or password'); return; }
+      setCurrent(email);
+      bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
+      alert('Welcome back, ' + users[email].name.split(' ')[0] + '!');
+      document.getElementById('loginForm').reset();
+    }
+
+    // Logout
+    function logout(){
+      clearCurrent();
+      alert('You have logged out.');
+    }
+
+    // Update top-right auth UI
+    function updateAuthUI(){
+      const area = document.getElementById('authArea');
+      const currentEmail = localStorage.getItem('bs_currentUser');
+      area.innerHTML = ''; // reset
+      if(currentEmail){
+        const users = loadUsers();
+        const user = users[currentEmail];
+        const nameBtn = document.createElement('button');
+        nameBtn.className = 'btn btn-outline-soft';
+        nameBtn.textContent = (user && user.name) ? user.name.split(' ')[0] : 'Member';
+        nameBtn.onclick = ()=>{ /* could open profile */ };
+        const logoutBtn = document.createElement('button');
+        logoutBtn.className = 'btn btn-outline-secondary';
+        logoutBtn.textContent = 'Logout';
+        logoutBtn.onclick = logout;
+        area.appendChild(nameBtn);
+        area.appendChild(logoutBtn);
+      } else {
+        const loginShow = document.createElement('button');
+        loginShow.className = 'btn btn-outline-soft';
+        loginShow.id = 'btnLoginShow';
+        loginShow.textContent = 'Login';
+        loginShow.onclick = ()=> new bootstrap.Modal(document.getElementById('loginModal')).show();
+
+        const signupShow = document.createElement('button');
+        signupShow.className = 'btn btn-brand';
+        signupShow.id = 'btnSignupShow';
+        signupShow.textContent = 'Sign Up';
+        signupShow.onclick = ()=> new bootstrap.Modal(document.getElementById('signupModal')).show();
+
+        area.appendChild(loginShow);
+        area.appendChild(signupShow);
+      }
+    }
+
+    // Search filter for auction cards
+    function filterCards(){
+      const q = document.getElementById('globalSearch').value.trim().toLowerCase();
+      document.querySelectorAll('#auctionsGrid .card').forEach(card=>{
+        const txt = card.innerText.toLowerCase();
+        card.parentElement.style.display = (!q || txt.includes(q)) ? '' : 'none';
+      });
+    }
+
+    // Wire up initial buttons and UI
+    document.addEventListener('DOMContentLoaded', ()=>{
+      // show modals when top buttons clicked (if not replaced by logged-in UI)
+      document.getElementById('authArea').addEventListener('click', (e)=>{
+        if(e.target && e.target.id === 'btnLoginShow'){
+          new bootstrap.Modal(document.getElementById('loginModal')).show();
+        } else if(e.target && e.target.id === 'btnSignupShow'){
+          new bootstrap.Modal(document.getElementById('signupModal')).show();
+        }
+      });
+      updateAuthUI();
+    });
+  </script>
 </body>
-
 </html>

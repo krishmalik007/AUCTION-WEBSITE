@@ -1,383 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bid Studio — Furniture</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{--accent:#7c5cff;--accent-2:#00c2ff}
+    body{
+      background: radial-gradient(900px 400px at 85% 10%, rgba(0,194,255,0.05), transparent 10%),
+                  linear-gradient(180deg,#fffdfa 0%, #f6fbff 100%);
+      font-family:Inter, system-ui, Arial;
+      color:#081226;
+    }
+    .navbar{background: linear-gradient(90deg, rgba(255,255,255,0.82), rgba(255,255,255,0.6)); box-shadow:0 6px 20px rgba(12,18,30,.04)}
+    .stylish-text{font-family:'Lobster',cursive}
+    .btn-brand{background: linear-gradient(90deg,var(--accent), var(--accent-2)); color:white; border: none}
+    .card{border-radius:12px; transition:transform .18s ease}
+    .card:hover{transform:translateY(-6px); box-shadow:0 20px 40px rgba(12,18,30,.06)}
+    .card-img-top{height:230px; object-fit:cover}
+    .footer{background:#061022;color:#dbeafe;padding:36px 0}
+    @media (max-width:768px){ .card-img-top{height:160px} }
+  </style>
 </head>
 <body>
-    
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand stylish-text" href="index.html">Bid Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav3">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav3">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="ART page.html">Art</a></li>
+          <li class="nav-item"><a class="nav-link active" href="FURNITURE page.html">Furniture</a></li>
+        </ul>
+        <div id="authArea" class="d-flex gap-2"></div>
+      </div>
+    </div>
+  </nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Navbar</title>
-    <style>
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .nav-link {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: black;
-        }
-
-        .navbar-nav .nav-item:hover {
-            display: block;
-            color: black;
-        }
-
-        .navbar-nav .nav-item .nav-link:hover {
-            color: red;
-            font-weight: 700;
-        }
-
-        .btn {
-            font-weight: 600;
-        }
-
-        #tani {
-            color: green;
-        }
-
-        #tanu {
-            color: blue;
-        }
-
-        #tani:hover {
-            color: white;
-        }
-
-        #tanu:hover {
-            color: white;
-        }
-
-        .stylish-text {
-            font-family: 'Lobster', cursive;
-            font-size: 30px;
-            color: black;
-            text-align: center;
-            text-decoration: none;
-            padding-left: 20px;
-        }
-
-        @media (max-width: 992px) {
-            .stylish-text {
-                font-size: 24px;
-            }
-
-            .nav-link {
-                font-size: 1rem;
-            }
-
-            .navbar-brand {
-                font-size: 1.25rem;
-            }
-        }
-
-        .btn-outline-primary {
-            border-color: #0d6efd;
-            color: #0d6efd;
-        }
-
-        .btn-outline-primary:hover {
-            background-color: #0d6efd;
-            color: white;
-        }
-
-        .btn-outline-success {
-            border-color: #198754;
-            color: #198754;
-        }
-
-        .btn-outline-success:hover {
-            background-color: #198754;
-            color: white;
-        }
-
-        .btn-outline-secondary {
-            border-color: #6c757d;
-            color: #6c757d;
-        }
-
-        .btn-outline-secondary:hover {
-            background-color: #6c757d;
-            color: white;
-        }
-
-        .card {
-            height: 100%;
-        }
-
-        .card img {
-            height: 230px;
-            object-fit: cover;
-        }
-
-        .card-title {
-            font-size: 1rem;
-        }
-
-        .card-text {
-            font-size: 0.9rem;
-        }
-        
-        .footer {
-            background-color: #333;
-            color: #fff;
-            padding: 40px 0;
-        }
-
-        .footer h5 {
-            margin-bottom: 20px;
-            color: #f8f9fa;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer p, .footer a {
-            color: #f8f9fa;
-            font-size: 0.9rem;
-        }
-
-        .footer a:hover {
-            color: #f8f9fa;
-            text-decoration: underline;
-        }
-
-        .footer .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
-            color: #f8f9fa;
-        }
-
-        .footer .social-icons a:hover {
-            color: #0d6efd;
-        }
-
-        .footer .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .footer .container {
-            max-width: 1100px;
-        }
-    </style>
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
-        <div class="container-fluid">
-            <a class="stylish-text navbar-brand" href="#">Bid Studio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <form class="d-flex mx-auto">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
-                </form>
-                <div class="navbar-text d-flex">
-                    <a class="btn btn-outline-primary me-2" id="tanu" href="#">Login</a>
-                    <a class="btn btn-outline-success" id="tani" href="#">Sign Up</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e0e0e0;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2"
-                aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav2">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">ART</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">FURNITURE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">COLLECTIBLES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">ANTIQUES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">COINS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-4" href="#">HOME & DECOR'S</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 1.jpeg" class="card-img-top" alt="Card Image 1">
-                    <div class="card-body">
-                        <h5 class="card-title">ALBERTO GIACOMETTI (SWISS, 1901-1966).</h5>
-                        <p class="card-text">$5,000</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 2.jpeg" class="card-img-top" alt="Card Image 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Keith Haring 1958-1990</h5>
-                        <p class="card-text">$155 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 3.jpeg" class="card-img-top" alt="Card Image 3">
-                    <div class="card-body">
-                        <h5 class="card-title">SAILBOAT DRAWING LYONEL FEININGER</h5>
-                        <p class="card-text">$250</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 4.jpeg" class="card-img-top" alt="Card Image 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Walt Disney Drawing Signed</h5>
-                        <p class="card-text">$305</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 5.jpeg" class="card-img-top" alt="Card Image 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Self Portrait Picasso Miro era Oil on Canvas</h5>
-                        <p class="card-text">$700</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 6.jpeg" class="card-img-top" alt="Card Image 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Antique 19C Dutch Oil Painting Signed</h5>
-                        <p class="card-text">$280</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 7.jpeg" class="card-img-top" alt="Card Image 7">
-                    <div class="card-body">
-                        <h5 class="card-title">Robert Waltsak (NJ,B 1944) Oil Painting</h5>
-                        <p class="card-text">$1,050</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 8.jpeg" class="card-img-top" alt="Card Image 8">
-                    <div class="card-body">
-                        <h5 class="card-title">A.E. BACKUS CYPRESS SWAMP FLORIDA PAINTING</h5>
-                        <p class="card-text">$10,000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 9.jpeg" class="card-img-top" alt="Card Image 9">
-                    <div class="card-body">
-                        <h5 class="card-title">Antique 19C Dutch Oil Painting Signed</h5>
-                        <p class="card-text">$130</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 10.jpeg" class="card-img-top" alt="Card Image 10">
-                    <div class="card-body">
-                        <h5 class="card-title">ELIZABETH CARMEL - Wild Dogwood, Yosemite</h5>
-                        <p class="card-text">$25</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 11.jpeg" class="card-img-top" alt="Card Image 11">
-                    <div class="card-body">
-                        <h5 class="card-title">Vintage Lithograph Banksy Crayon Shooter Graff Street</h5>
-                        <p class="card-text">$450</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="image art 12.jpeg" class="card-img-top" alt="Card Image 12">
-                    <div class="card-body">
-                        <h5 class="card-title">BANKSY (Britannique, Né En 1975)</h5>
-                        <p class="card-text">€300,000</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <main class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2>Furniture & Home</h2>
+      <div class="d-flex gap-2">
+        <input id="furnSearch" class="form-control" placeholder="Search furniture..." style="min-width:220px">
+        <select id="furnSort" class="form-select" style="width:160px">
+          <option value="">Sort — Featured</option>
+          <option value="low">Price: Low</option>
+          <option value="high">Price: High</option>
+        </select>
+      </div>
     </div>
 
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>About Us</h5>
-                    <p>Bid Studio offers a unique platform for buying and selling antiques, art, and collectibles. Our mission is to bring timeless elegance and craftsmanship to enthusiasts and collectors around the world.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Auctions</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Contact Us</h5>
-                    <p><i class="fa fa-map-marker" aria-hidden="true"></i> 123 Antique St, History City</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +1 234 567 890</p>
-                    <p><i class="fa fa-envelope" aria-hidden="true"></i> support@bidstudio.com</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2024 Bid Studio. All Rights Reserved.</p>
-            </div>
+    <!-- FURNITURE GRID: I used the item images you provided across pages.
+         Filenames are preserved (image 11, 18, 14, 12, 19, 16, 20, 13, 17, 15, image 6, image 7, image 4, image 2) -->
+    <div id="furnGrid" class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 11.jpeg" class="card-img-top" alt="Vintage Cabinet">
+          <div class="card-body">
+            <h6 class="card-title">Vintage Cabinet — Handcrafted</h6>
+            <p class="text-muted">$420</p>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 18.jpeg" class="card-img-top" alt="Antique Table">
+          <div class="card-body">
+            <h6 class="card-title">Antique Dining Table</h6>
+            <p class="text-muted">$1,250</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 14.jpeg" class="card-img-top" alt="Sideboard">
+          <div class="card-body">
+            <h6 class="card-title">Mid-century Sideboard</h6>
+            <p class="text-muted">$680</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 12.jpeg" class="card-img-top" alt="Console">
+          <div class="card-body">
+            <h6 class="card-title">Console Table — Limited</h6>
+            <p class="text-muted">$305</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- row 2 -->
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 19.jpeg" class="card-img-top" alt="Armchair">
+          <div class="card-body">
+            <h6 class="card-title">Upholstered Armchair</h6>
+            <p class="text-muted">$220</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 16.jpeg" class="card-img-top" alt="Settee">
+          <div class="card-body">
+            <h6 class="card-title">Two-seater Settee</h6>
+            <p class="text-muted">$990</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 20.jpeg" class="card-img-top" alt="Antique Desk">
+          <div class="card-body">
+            <h6 class="card-title">Antique Writing Desk</h6>
+            <p class="text-muted">$760</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 13.jpeg" class="card-img-top" alt="Bookshelf">
+          <div class="card-body">
+            <h6 class="card-title">Tall Bookshelf — Oak</h6>
+            <p class="text-muted">$340</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- row 3 -->
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 17" class="card-img-top" alt="Dining Chair">
+          <div class="card-body">
+            <h6 class="card-title">Set of Dining Chairs</h6>
+            <p class="text-muted">$150</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 15.jpeg" class="card-img-top" alt="Coffee Table">
+          <div class="card-body">
+            <h6 class="card-title">Coffee Table — Reclaimed Wood</h6>
+            <p class="text-muted">$120</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popular category images reused as furniture accents -->
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 6.jpeg" class="card-img-top" alt="Decor Piece">
+          <div class="card-body">
+            <h6 class="card-title">Decor Accent</h6>
+            <p class="text-muted">$45</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="card h-100 shadow-sm">
+          <img src="image 7.jpeg" class="card-img-top" alt="Stool">
+          <div class="card-body">
+            <h6 class="card-title">Wooden Stool</h6>
+            <p class="text-muted">$35</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>About</h5>
+          <p class="small">Bid Studio — curated auctions for furniture and home decor. Demo store — use for prototyping.</p>
+        </div>
+        <div class="col-md-6 text-end">
+          <p class="small">&copy; 2024 Bid Studio</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LOGIN & SIGNUP MODALS (same demo auth) -->
+  <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Sign in</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
+            <input id="loginEmail" class="form-control mb-3" placeholder="Email" type="email" required>
+            <input id="loginPassword" class="form-control mb-3" placeholder="Password" type="password" required>
+            <div class="d-grid"><button class="btn btn-brand">Sign in</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="signupModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4">
+        <div class="modal-header border-0">
+          <h5 class="modal-title">Create account</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupForm" onsubmit="event.preventDefault(); signupUser();">
+            <input id="suName" class="form-control mb-2" placeholder="Full name" required>
+            <input id="suEmail" class="form-control mb-2" placeholder="name@example.com" type="email" required>
+            <input id="suPassword" class="form-control mb-2" placeholder="Password (min 6)" type="password" minlength="6" required>
+            <input id="suPassword2" class="form-control mb-3" placeholder="Confirm password" type="password" minlength="6" required>
+            <div class="d-grid"><button class="btn btn-brand">Create account</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Same demo auth functions — ensure consistent behavior across pages
+    function loadUsers(){ return JSON.parse(localStorage.getItem('bs_users') || '{}'); }
+    function saveUsers(u){ localStorage.setItem('bs_users', JSON.stringify(u)); }
+    function setCurrent(email){ localStorage.setItem('bs_currentUser', email); updateAuthUI(); }
+    function clearCurrent(){ localStorage.removeItem('bs_currentUser'); updateAuthUI(); }
+
+    function signupUser(){
+      const name = document.getElementById('suName').value.trim();
+      const email = document.getElementById('suEmail').value.trim().toLowerCase();
+      const pw = document.getElementById('suPassword').value;
+      const pw2 = document.getElementById('suPassword2').value;
+      if(pw !== pw2){ alert('Passwords do not match'); return; }
+      const users = loadUsers();
+      if(users[email]){ alert('An account with that email already exists.'); return; }
+      users[email] = { name, email, password: pw };
+      saveUsers(users);
+      setCurrent(email);
+      bootstrap.Modal.getInstance(document.getElementById('signupModal')).hide();
+      alert('Account created — welcome, ' + name.split(' ')[0] + '!');
+      document.getElementById('signupForm').reset();
+    }
+
+    function loginUser(){
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const pw = document.getElementById('loginPassword').value;
+      const users = loadUsers();
+      if(!users[email] || users[email].password !== pw){ alert('Invalid email or password'); return; }
+      setCurrent(email);
+      bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
+      alert('Welcome back, ' + users[email].name.split(' ')[0] + '!');
+      document.getElementById('loginForm').reset();
+    }
+
+    function logout(){ clearCurrent(); alert('You have logged out.'); }
+
+    function updateAuthUI(){
+      const area = document.getElementById('authArea');
+      area.innerHTML = '';
+      const currentEmail = localStorage.getItem('bs_currentUser');
+      if(currentEmail){
+        const users = loadUsers();
+        const user = users[currentEmail];
+        const nameBtn = document.createElement('button');
+        nameBtn.className = 'btn btn-outline-soft';
+        nameBtn.textContent = (user && user.name) ? user.name.split(' ')[0] : 'Member';
+        const logoutBtn = document.createElement('button');
+        logoutBtn.className = 'btn btn-outline-secondary';
+        logoutBtn.textContent = 'Logout';
+        logoutBtn.onclick = logout;
+        area.appendChild(nameBtn);
+        area.appendChild(logoutBtn);
+      } else {
+        const loginShow = document.createElement('button');
+        loginShow.className = 'btn btn-outline-soft';
+        loginShow.textContent = 'Login';
+        loginShow.onclick = ()=> new bootstrap.Modal(document.getElementById('loginModal')).show();
+
+        const signupShow = document.createElement('button');
+        signupShow.className = 'btn btn-brand';
+        signupShow.textContent = 'Sign Up';
+        signupShow.onclick = ()=> new bootstrap.Modal(document.getElementById('signupModal')).show();
+
+        area.appendChild(loginShow);
+        area.appendChild(signupShow);
+      }
+    }
+
+    // Furniture search
+    document.addEventListener('DOMContentLoaded', ()=>{
+      updateAuthUI();
+      document.getElementById('furnSearch').addEventListener('input', function(){
+        const q = this.value.toLowerCase();
+        document.querySelectorAll('#furnGrid .card').forEach(card=>{
+          card.parentElement.style.display = (!q || card.innerText.toLowerCase().includes(q)) ? '' : 'none';
+        });
+      });
+    });
+  </script>
 </body>
-
 </html>
