@@ -24,7 +24,6 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    /* NAVBAR */
     .navbar{
       background: linear-gradient(90deg, rgba(255,255,255,0.78), rgba(255,255,255,0.56));
       box-shadow: 0 6px 20px rgba(12,18,30,.04);
@@ -36,17 +35,14 @@
     .btn-brand{background: linear-gradient(90deg,var(--accent), var(--accent-2)); color:white; border: none}
     .btn-outline-soft{border:1px solid rgba(11,18,32,.06); background: rgba(255,255,255,.85)}
 
-    /* HERO / CAROUSEL */
     .carousel-item img{height:420px; object-fit:cover; border-radius:12px; box-shadow:var(--card-shadow)}
     .carousel-caption{right:unset; left:24px; text-align:left}
     .carousel-caption h5{font-weight:700; color:#fff}
     .carousel-caption p{color:#eef6ff}
 
-    /* SEARCH */
     .search-inline .form-control{border-radius:999px 12px 12px 999px; box-shadow:0 8px 24px rgba(15,23,42,0.06)}
     .search-inline .btn{border-radius:12px}
 
-    /* CATEGORIES & CARDS */
     .popular-item{background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.56)); border-radius:14px; padding:16px; transition:transform .22s, box-shadow .22s; box-shadow:var(--card-shadow)}
     .popular-item:hover{transform:translateY(-8px); box-shadow:0 24px 48px rgba(12,18,30,.08)}
     .popular-item img{width:120px; height:120px; object-fit:cover; border-radius:10px}
@@ -57,7 +53,6 @@
     .auction-text{font-weight:700; color:#0b1220}
     .meta-pill{font-size:.8rem; padding:.35rem .6rem; border-radius:999px; background: rgba(11,18,32,.06)}
 
-    /* FOOTER */
     .footer{background:linear-gradient(180deg,#061022,#07142a); color:#dbeafe; padding:48px 0; margin-top:48px; border-top-left-radius:18px; border-top-right-radius:18px}
     .footer a{color:#cfe6ff}
 
@@ -69,7 +64,6 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR with routes to all pages -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand stylish-text" href="index.html">Bid Studio</a>
@@ -88,13 +82,11 @@
         </ul>
 
         <div id="authArea" class="d-flex align-items-center gap-2">
-          <!-- JS will populate login/signup or user+logout -->
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- HERO / CAROUSEL -->
   <div class="container mt-4">
     <div id="homeCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -138,7 +130,6 @@
     </div>
   </div>
 
-  <!-- SEARCH -->
   <div class="container mt-4">
     <div class="d-flex justify-content-center">
       <form class="d-flex search-inline w-100" onsubmit="event.preventDefault(); filterCards();">
@@ -148,7 +139,7 @@
     </div>
   </div>
 
-  <!-- CATEGORIES -->
+
   <section class="popular-category container mt-4">
     <h2 class="text-center my-4">Explore Popular Categories</h2>
     <div class="row justify-content-center g-3">
@@ -173,7 +164,6 @@
     </div>
   </section>
 
-  <!-- TOP AUCTIONS GRID -->
   <section class="container mt-5">
     <h2 class="text-center mb-4">Top Ongoing Auctions</h2>
     <div id="auctionsGrid" class="row g-4">
@@ -239,7 +229,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer mt-5">
     <div class="container">
       <div class="row">
@@ -268,8 +257,6 @@
       <div class="text-center mt-4 small">&copy; 2024 Bid Studio. All Rights Reserved.</div>
     </div>
   </footer>
-
-  <!-- LOGIN & SIGNUP MODALS (demo, localStorage) -->
   <div class="modal fade" id="loginModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content rounded-4">
@@ -311,10 +298,8 @@
     </div>
   </div>
 
-  <!-- SCRIPTS: demo auth + search -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Demo client-side auth stored in localStorage
     function loadUsers(){ return JSON.parse(localStorage.getItem('bs_users') || '{}'); }
     function saveUsers(u){ localStorage.setItem('bs_users', JSON.stringify(u)); }
     function setCurrent(email){ localStorage.setItem('bs_currentUser', email); updateAuthUI(); }
@@ -382,7 +367,6 @@
       }
     }
 
-    // Simple client-side search (filters auction cards by inner text)
     function filterCards(){
       const q = document.getElementById('globalSearch').value.trim().toLowerCase();
       document.querySelectorAll('#auctionsGrid .card').forEach(card=>{
@@ -393,7 +377,6 @@
 
     document.addEventListener('DOMContentLoaded', ()=> {
       updateAuthUI();
-      // keyboard Enter on search triggers filter
       document.getElementById('globalSearch').addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ e.preventDefault(); filterCards(); } });
     });
   </script>
