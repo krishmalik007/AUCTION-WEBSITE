@@ -160,9 +160,7 @@
         const s=document.createElement('button'); s.className='btn btn-brand'; s.textContent='Sign Up'; s.onclick=()=> new bootstrap.Modal(document.getElementById('signupModal')).show();
         area.appendChild(l); area.appendChild(s);
       }
-    }
-
-    document.addEventListener('DOMContentLoaded', ()=> {
+    }    document.addEventListener('DOMContentLoaded', ()=> {
       updateAuthUI();
       document.getElementById('coinsSearch').addEventListener('input', function(){
         const q=this.value.toLowerCase();
